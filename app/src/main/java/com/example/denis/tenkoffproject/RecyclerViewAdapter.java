@@ -1,6 +1,5 @@
 package com.example.denis.tenkoffproject;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -8,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.denis.tenkoffproject.model.getnewsmodel.NewsModel;
+import com.example.denis.tenkoffproject.model.network.getnewsmodel.NewsModel;
 
 import java.util.List;
 
@@ -19,7 +18,6 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<NewsModel> mNews;
-    private Context mContext;
 
     private OnItemClickListener mListener;
 
@@ -27,8 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         void onItemClick(NewsModel news);
     }
 
-    public RecyclerViewAdapter(Context context, List<NewsModel> news) {
-        mContext = context;
+    public RecyclerViewAdapter(List<NewsModel> news) {
         mNews = news;
     }
 
@@ -45,12 +42,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.mItemMessage.setText(Html.fromHtml(news.getText()));
         holder.mItemDate.setText(news.getPublicationDate());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    mListener.onItemClick(news);
-                }
+        holder.itemView.setOnClickListener(v -> {
+            if (mListener != null) {
+                mListener.onItemClick(news);
             }
         });
     }
@@ -61,7 +55,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public void setNews(List<NewsModel> news) {
-        mNews = news;
+        mNews.clear();
+        mNews.addAll(news);
         notifyDataSetChanged();
     }
 

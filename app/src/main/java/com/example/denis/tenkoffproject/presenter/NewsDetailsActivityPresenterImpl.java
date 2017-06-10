@@ -1,15 +1,9 @@
 package com.example.denis.tenkoffproject.presenter;
 
-import com.example.denis.tenkoffproject.activity.HomeView;
 import com.example.denis.tenkoffproject.activity.NewsDetailsView;
-import com.example.denis.tenkoffproject.model.getnewsdetailsmodel.GetDetailsModel;
-import com.example.denis.tenkoffproject.model.getnewsdetailsmodel.GetDetailsResultModel;
-import com.example.denis.tenkoffproject.model.getnewsdetailsmodel.Payload;
-import com.example.denis.tenkoffproject.model.getnewsmodel.GetNewsModel;
-import com.example.denis.tenkoffproject.model.getnewsmodel.NewsModel;
-import com.example.denis.tenkoffproject.model.getnewsmodel.PayloadModel;
-
-import java.util.List;
+import com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel.GetDetailsModel;
+import com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel.GetDetailsResultModel;
+import com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel.Payload;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.denis.tenkoffproject.R;
-import com.example.denis.tenkoffproject.model.getnewsdetailsmodel.Payload;
+import com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel.Payload;
 import com.example.denis.tenkoffproject.presenter.NewsDetailsActivityPresenter;
 import com.example.denis.tenkoffproject.presenter.NewsDetailsActivityPresenterImpl;
 
@@ -21,8 +21,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class NewsDetailsActivity extends AppCompatActivity implements NewsDetailsView {
-
-    private static final String TAG = NewsDetailsActivity.class.getSimpleName();
 
     private String mNewsID;
 
@@ -62,6 +60,7 @@ public class NewsDetailsActivity extends AppCompatActivity implements NewsDetail
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.onDestroy();
+        mUnbinder.unbind();
     }
 
     @Override

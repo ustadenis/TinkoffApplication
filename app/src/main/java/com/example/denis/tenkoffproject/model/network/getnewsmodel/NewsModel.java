@@ -1,12 +1,11 @@
-package com.example.denis.tenkoffproject.model.getnewsmodel;
+package com.example.denis.tenkoffproject.model.network.getnewsmodel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
-public class NewsModel implements Serializable {
+public class NewsModel {
 
     @SerializedName("id")
     @Expose

@@ -1,16 +1,15 @@
-package com.example.denis.tenkoffproject.model.getnewsmodel;
+package com.example.denis.tenkoffproject.model.network.getnewsmodel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Denis on 09.06.2017.
  */
 
-public class PayloadModel implements Serializable {
+public class PayloadModel {
     @SerializedName("resultCode")
     @Expose
     private String resultCode;

@@ -1,8 +1,7 @@
-package com.example.denis.tenkoffproject.model.getnewsdetailsmodel;
+package com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**

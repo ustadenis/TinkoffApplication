@@ -12,7 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.denis.tenkoffproject.model.getnewsmodel.NewsModel;
+import com.example.denis.tenkoffproject.model.network.getnewsmodel.NewsModel;
 import com.example.denis.tenkoffproject.R;
 import com.example.denis.tenkoffproject.RecyclerViewAdapter;
 import com.example.denis.tenkoffproject.presenter.HomeActivityPresenter;
@@ -27,7 +27,6 @@ import butterknife.Unbinder;
 
 public class HomeActivity extends AppCompatActivity implements HomeView, SwipeRefreshLayout.OnRefreshListener, RecyclerViewAdapter.OnItemClickListener {
 
-    private static final String TAG = HomeActivity.class.getSimpleName();
     public static final String NEWS_EXTRA = "news_id_extra";
 
     private Unbinder mUnbinder;
@@ -44,9 +43,9 @@ public class HomeActivity extends AppCompatActivity implements HomeView, SwipeRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mUnbinder = ButterKnife.bind(this);
-        mPresenter = new HomeActivityPresenterImpl(this);
+        mPresenter = new HomeActivityPresenterImpl(this, this);
 
-        mRecyclerViewAdapter = new RecyclerViewAdapter(this, new ArrayList<NewsModel>());
+        mRecyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>());
         mRecyclerViewAdapter.setOnClickListener(this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -97,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView, SwipeRe
 
     @Override
     public void onRefresh() {
-        mPresenter.getNews();
+        mPresenter.updateNews();
     }
 
     @Override
