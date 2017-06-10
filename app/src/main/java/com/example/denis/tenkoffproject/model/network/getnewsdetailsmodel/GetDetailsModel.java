@@ -1,6 +1,7 @@
 package com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel;
 
-import retrofit2.Call;
+import io.reactivex.Observable;
+
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -10,5 +11,5 @@ import retrofit2.http.Query;
 
 public interface GetDetailsModel {
     @GET("/v1/news_content")
-    Call<GetDetailsResultModel> getNewsDetails(@Query("id") String id);
+    Observable<GetDetailsResultModel> getNewsDetails(@Query("id") String id);
 }

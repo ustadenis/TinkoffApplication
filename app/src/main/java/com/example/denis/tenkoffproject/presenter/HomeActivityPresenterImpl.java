@@ -39,7 +39,7 @@ public class HomeActivityPresenterImpl implements HomeActivityPresenter {
 
     private AppDatabase mDataBase;
 
-    CompositeDisposable mDisposables;
+    private CompositeDisposable mDisposables;
 
     public HomeActivityPresenterImpl(Context context, HomeView view) {
         mContext = context;
