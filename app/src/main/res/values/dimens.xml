@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="news_item_margin">5dp</dimen>
+    <dimen name="item_title_text_size">15sp</dimen>
+    <dimen name="item_date_text_size">10sp</dimen>
+    <dimen name="item_message_text_size">13sp</dimen>
+    <dimen name="details_title_text_size">20sp</dimen>
+    <dimen name="details_date_text_size">10sp</dimen>
+    <dimen name="details_message_text_size">13sp</dimen>
+    <dimen name="item_elevation">4dp</dimen>
+    <dimen name="item_corner">1dp</dimen>
+</resources>
