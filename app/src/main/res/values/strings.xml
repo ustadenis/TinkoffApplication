@@ -3,4 +3,5 @@
     <string name="tinkoff_site">https://tinkoff.ru/</string>
     <string name="home_activity_label">News</string>
     <string name="details_activity_label">News details</string>
+    <string name="server_error">Server internal error.</string>
 </resources>

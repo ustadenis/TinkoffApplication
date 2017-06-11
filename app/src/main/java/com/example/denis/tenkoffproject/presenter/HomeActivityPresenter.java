@@ -6,5 +6,6 @@ package com.example.denis.tenkoffproject.presenter;
 
 public interface HomeActivityPresenter {
     void getNews();
+    void updateNews();
     void onDestroy();
 }

@@ -1,10 +1,9 @@
-
-package com.example.denis.tenkoffproject.model.getnewsdetailsmodel;
+package com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LastModificationDate {
+public class CreationDate {
 
     @SerializedName("milliseconds")
     @Expose

@@ -1,6 +1,6 @@
 package com.example.denis.tenkoffproject.activity;
 
-import com.example.denis.tenkoffproject.model.getnewsmodel.NewsModel;
+import com.example.denis.tenkoffproject.model.network.getnewsmodel.NewsModel;
 
 import java.util.List;
 

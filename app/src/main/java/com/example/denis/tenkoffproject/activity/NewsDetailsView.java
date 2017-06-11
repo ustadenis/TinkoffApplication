@@ -1,6 +1,6 @@
 package com.example.denis.tenkoffproject.activity;
 
-import com.example.denis.tenkoffproject.model.getnewsdetailsmodel.Payload;
+import com.example.denis.tenkoffproject.model.network.getnewsdetailsmodel.Payload;
 
 /**
  * Created by Denis on 10.06.2017.
