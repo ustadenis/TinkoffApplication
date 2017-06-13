@@ -78,8 +78,8 @@ public class HomeActivityPresenterImpl implements HomeActivityPresenter {
 
         Disposable disposable = model.getNews()
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(payloadModel -> updateNewsOnDatabase(payloadModel.getPayload()))
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         payloadModel -> {
                             if (!payloadModel.getResultCode().equals("OK")) {
@@ -98,10 +98,8 @@ public class HomeActivityPresenterImpl implements HomeActivityPresenter {
     }
 
     private void updateNewsOnDatabase(List<NewsModel> news) {
-        new Thread(() -> {
-            NewsDao newsModel = mDataBase.newsModel();
-            newsModel.deleteNews();
-            newsModel.insertNews(NewsConverter.toEntitiesList(news));
-        }).start();
+        NewsDao newsModel = mDataBase.newsModel();
+        newsModel.deleteNews();
+        newsModel.insertNews(NewsConverter.toEntitiesList(news));
     }
 }
